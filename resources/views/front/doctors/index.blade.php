@@ -6,7 +6,7 @@ Doctors
 
 @section('content')
 
-    <div
+    <!-- <div
         class="filteration d-flex gap-3 mb-3 flex-wrap justify-content-center justify-content-lg-start justify-content-md-start">
         <div class="dropdown">
             <button class="btn bg-blue btn-primary align-items-center d-flex gap-2 dropdown-toggle"
@@ -131,14 +131,14 @@ Doctors
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
         </div>
-    </div>
+    </div> -->
     <div class="doctors-grid">
 
         @foreach ($doctors as $doctor)
 
         <div class="card p-2" style="width: 18rem;">
-            <img src="../assets/images/major.jpg" class="card-img-top rounded-circle card-image-circle"
-                alt="major">
+        <img src="{{ asset('images/doctors/' . $doctor->image)  }}" class="card-img-top rounded-circle card-image-circle"
+        alt="major">
             <div class="card-body d-flex flex-column gap-1 justify-content-center">
                 <h4 class="card-title fw-bold text-center">{{ $doctor->name }}</h4>
                 <h6 class="card-title fw-bold text-center">{{ $doctor->major->title }}</h6>

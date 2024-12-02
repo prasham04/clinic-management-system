@@ -12,7 +12,7 @@ Make An Appointment with {{ $doctor->name }}
                 width="150">
             <div class="details-info d-flex flex-column gap-3 ">
                 <h4 class="card-title fw-bold">{{ $doctor->name }}</h4>
-                <div class="d-flex gap-3 align-bottom">
+                <!-- <div class="d-flex gap-3 align-bottom">
                     <ul class="rating">
                         <li class="star"></li>
                         <li class="star"></li>
@@ -21,7 +21,7 @@ Make An Appointment with {{ $doctor->name }}
                         <li class="star"></li>
                     </ul>
                     <a href="#" class="align-baseline">submit rating</a>
-                </div>
+                </div> -->
                 <h6 class="card-title fw-bold">{{ $doctor->major->title }}</h6>
             </div>
         </div>

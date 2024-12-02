@@ -31,7 +31,7 @@
                 alt="major">
             <div class="card-body d-flex flex-column gap-1 justify-content-center">
                 <h4 class="card-title fw-bold text-center">{{ $major->title }}</h4>
-                <a href="./doctors/index.html" class="btn btn-outline-primary card-button">Browse Doctors</a>
+                <a href="{{ route('front.majors.show', $major) }}" class="btn btn-outline-primary card-button">Browse Doctors</a>
             </div>
         </div>           
         @endforeach
