@@ -1,0 +1,39 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: clinic-app
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/var/www
+      - vendor-volume:/var/www/vendor
+    networks:
+      - clinic-network
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    container_name: clinic-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: PrashamRootPassword
+      MYSQL_DATABASE: clinic
+      MYSQL_USER: Prasham
+      MYSQL_PASSWORD: Prasham
+    ports:
+      - "3307:3306"
+    networks:
+      - clinic-network
+    volumes:
+      - db_data:/var/lib/mysql
+
+networks:
+  clinic-network:
+
+volumes:
+  db_data:
+  vendor-volume:
